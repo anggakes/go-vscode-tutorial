@@ -12,8 +12,6 @@ COPY ./common-debian.sh /tmp/library-scripts/
 RUN bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
-ENV GOPROXY=http://goproxy.oval.id
-
 ARG GO_TOOLS_WITH_MODULES="\
     golang.org/x/tools/gopls \
     golang.org/x/tools/cmd/gorename \
